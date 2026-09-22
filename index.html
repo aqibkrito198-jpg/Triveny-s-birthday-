@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Triveny ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080308;
+    color:#fff;
+    font-family:Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 15% 15%,rgba(255,70,140,.10),transparent 30%),
+        radial-gradient(circle at 85% 80%,rgba(160,60,180,.08),transparent 30%);
+    z-index:-2;
+}
+
+#particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.particle{
+    position:absolute;
+    bottom:-20px;
+    width:4px;
+    height:4px;
+    background:#ff91b8;
+    border-radius:50%;
+    box-shadow:0 0 12px #ff5b94;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0);
+        opacity:0;
+    }
+    15%{opacity:.8;}
+    to{
+        transform:translateY(-110vh);
+        opacity:0;
+    }
+}
+
+/* PASSWORD */
+
+#lockScreen{
+    position:fixed;
+    inset:0;
+    z-index:9999;
+    background:
+        radial-gradient(circle at center,#3b1029,#080308 70%);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.lockBox{
+    width:100%;
+    max-width:390px;
+    text-align:center;
+    padding:35px 25px;
+    border:1px solid #71334f;
+    border-radius:25px;
+    background:rgba(255,255,255,.045);
+    box-shadow:0 20px 70px rgba(255,40,120,.15);
+    animation:appear .8s ease;
+}
+
+.lockIcon{
+    font-size:58px;
+    margin-bottom:15px;
+    animation:pulse 1.5s infinite;
+}
+
+.lockBox h1{
+    color:#ff6f9e;
+    font-size:38px;
+}
+
+.lockBox p{
+    color:#d7afc0;
+    line-height:1.7;
+    margin:15px 0 25px;
+}
+
+#password{
+    width:100%;
+    padding:15px;
+    border-radius:30px;
+    border:1px solid #633049;
+    outline:none;
+    background:#130910;
+    color:white;
+    text-align:center;
+    font-size:16px;
+}
+
+#password:focus{
+    border-color:#ff548d;
+    box-shadow:0 0 18px rgba(255,70,130,.2);
+}
+
+button{
+    border:0;
+    color:white;
+    background:linear-gradient(135deg,#ff427e,#ff719f);
+    padding:13px 23px;
+    border-radius:30px;
+    font-size:15px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+button:disabled{
+    opacity:.6;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.unlockButton{
+    margin-top:15px;
+    width:100%;
+}
+
+#error{
+    display:none;
+    color:#ff789b;
+    margin-top:15px;
+}
+
+/* MAIN */
+
+#website{
+    display:none;
+}
+
+.container{
+    width:100%;
+    max-width:720px;
+    margin:auto;
+    padding:0 18px 50px;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+}
+
+.subtitle{
+    color:#ffabc5;
+    letter-spacing:4px;
+    font-size:13px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(50px,13vw,85px);
+    color:#ff568d;
+    text-shadow:
+        0 0 15px rgba(255,70,130,.5),
+        0 0 45px rgba(255,40,120,.25);
+}
+
+.nickname{
+    color:#ffd0de;
+    font-size:21px;
+    margin-top:8px;
+}
+
+.heroHeart{
+    font-size:65px;
+    margin:25px;
+    animation:pulse 1.4s infinite;
+}
+
+.birthdate{
+    color:#e7bfce;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.16);}
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.96);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* SECTIONS */
+
+.section{
+    padding:60px 5px;
+    border-top:1px solid rgba(255,255,255,.12);
+    text-align:center;
+}
+
+.section h2{
+    color:#ff719e;
+    margin-bottom:20px;
+    font-size:29px;
+}
+
+.message{
+    color:#ead5de;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/* COUNTER */
+
+.counter{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    margin-top:25px;
+}
+
+.counterBox{
+    flex:1;
+    max-width:130px;
+    padding:18px 5px;
+    background:#170b13;
+    border:1px solid #482338;
+    border-radius:16px;
+}
+
+.counterNumber{
+    display:block;
+    color:#ff6b9b;
+    font-size:26px;
+    font-weight:bold;
+}
+
+.counterLabel{
+    color:#a98997;
+    font-size:10px;
+}
+
+/* GAME */
+
+.game{
+    margin-top:25px;
+    padding:27px 17px;
+    border-radius:22px;
+    background:rgba(255,255,255,.035);
+    border:1px solid #49243a;
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+.gameTitle{
+    font-size:23px;
+    color:#ffd0df;
+    margin-bottom:12px;
+}
+
+.gameText{
+    color:#cdaebc;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.status{
+    min-height:25px;
+    margin-top:15px;
+    color:#ff9fbd;
+}
+
+.gameComplete{
+    animation:success .6s ease;
+}
+
+@keyframes success{
+    0%{transform:scale(.97);}
+    50%{transform:scale(1.02);}
+    100%{transform:scale(1);}
+}
+
+/* QUIZ */
+
+.quizOptions{
+    display:grid;
+    gap:10px;
+}
+
+.quizOptions button{
+    width:100%;
+    background:#21111b;
+    border:1px solid #5a2d46;
+}
+
+.quizOptions button:hover{
+    background:#ff4d88;
+}
+
+/* HEART CATCH */
+
+#heartArena{
+    position:relative;
+    width:100%;
+    height:280px;
+    background:#080308;
+    border-radius:17px;
+    border:1px solid #321524;
+    overflow:hidden;
+    margin:18px 0;
+}
+
+.catchHeart{
+    position:absolute;
+    font-size:34px;
+    cursor:pointer;
+    user-select:none;
+    animation:heartPop .5s ease;
+}
+
+@keyframes heartPop{
+    from{
+        transform:scale(.3);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* BOX */
+
+.boxes{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin:20px 0;
+}
+
+.box{
+    width:80px;
+    height:80px;
+    border-radius:16px;
+    background:#24101c;
+    border:1px solid #64314e;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:37px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.box:hover{
+    transform:translateY(-5px);
+}
+
+/* ROSES */
+
+.roses{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:20px 0;
+}
+
+.rose{
+    font-size:48px;
+    cursor:pointer;
+    transition:.25s;
+}
+
+.rose:hover{
+    transform:scale(1.2) rotate(-5deg);
+}
+
+/* LETTER */
+
+.letter{
+    display:none;
+    margin-top:22px;
+    padding:25px 20px;
+    border-radius:18px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,100,150,.08),
+            rgba(255,255,255,.025)
+        );
+    border:1px solid rgba(255,150,190,.2);
+    color:#f1dce5;
+    line-height:1.9;
+    animation:letterIn .8s ease;
+}
+
+.letterIcon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+@keyframes letterIn{
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+/* MEMORIES */
+
+.memoriesIntro{
+    color:#cdaebc;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+.photoGrid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.photoCard{
+    position:relative;
+    overflow:hidden;
+    border-radius:18px;
+    border:1px solid #51283f;
+    background:#130910;
+    aspect-ratio:1/1;
+    cursor:pointer;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.photoCard img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .6s ease,filter .6s ease;
+}
+
+.photoCard:hover img{
+    transform:scale(1.08);
+    filter:brightness(.72);
+}
+
+.photoCaption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:35px 10px 12px;
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.8)
+    );
+    color:white;
+    font-size:14px;
+    opacity:0;
+    transition:.3s;
+}
+
+.photoCard:hover .photoCaption{
+    opacity:1;
+}
+
+/* PHOTO VIEWER */
+
+#photoViewer{
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    background:rgba(0,0,0,.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+#photoViewer img{
+    max-width:95%;
+    max-height:85vh;
+    border-radius:18px;
+    box-shadow:0 0 50px rgba(255,80,140,.25);
+}
+
+.closePhoto{
+    position:absolute;
+    top:20px;
+    right:20px;
+    width:45px;
+    height:45px;
+    padding:0;
+    border-radius:50%;
+    font-size:22px;
+    background:#29111e;
+    border:1px solid #66314d;
+}
+
+/* TARGET */
+
+#targetArena{
+    position:relative;
+    height:270px;
+    background:#080308;
+    border:1px solid #321524;
+    border-radius:17px;
+    overflow:hidden;
+    margin:18px 0;
+}
+
+.target{
+    position:absolute;
+    font-size:35px;
+    cursor:pointer;
+    animation:pulse .7s infinite;
+}
+
+/* FINAL */
+
+#final{
+    display:none;
+    margin-top:25px;
+    padding:30px 20px;
+    border-radius:25px;
+    border:1px solid #71304d;
+    background:linear-gradient(145deg,#24101c,#10070d);
+    animation:finalIn 1.2s ease;
+}
+
+@keyframes finalIn{
+    from{
+        opacity:0;
+        transform:scale(.92);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.finalHeart{
+    font-size:65px;
+    animation:pulse 1.3s infinite;
+}
+
+footer{
+    color:#755363;
+    text-align:center;
+    padding:35px 0;
+    font-size:13px;
+}
+
+/* FALLING HEARTS */
+
+.falling{
+    position:fixed;
+    top:-40px;
+    pointer-events:none;
+    z-index:9998;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:500px){
+
+    .counterNumber{
+        font-size:22px;
+    }
+
+    .counterLabel{
+        font-size:9px;
+    }
+
+    .photoGrid{
+        gap:9px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<!-- ================= PASSWORD ================= -->
+
+<div id="lockScreen">
+
+    <div class="lockBox">
+
+        <div class="lockIcon">🔐</div>
+
+        <h1>Triveny ❤️</h1>
+
+        <p>
+            A little world made specially for you.
+            <br>
+            But first... you need the secret password. ✨
+        </p>
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Secret password"
+            autocomplete="off"
+        >
+
+        <button
+            class="unlockButton"
+            id="unlockButton">
+            Unlock My Surprise ❤️
+        </button>
+
+        <div id="error">
+            Hmm... that's not it 😭
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= WEBSITE ================= -->
+
+<div id="website">
+
+<div class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="subtitle">
+        A SPECIAL DAY FOR
+    </div>
+
+    <h1>Triveny ❤️</h1>
+
+    <div class="nickname">
+        Triveny • Mummah • Shamoli
+    </div>
+
+    <div class="heroHeart">
+        ❤️
+    </div>
+
+    <div class="birthdate">
+        23 September 2009
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="section">
+
+    <h2>Happy Birthday 🎂</h2>
+
+    <p class="message">
+
+        Happy Birthday, Triveny ❤️
+
+        <br><br>
+
+        Today is your special day, so I made
+        this little world just for you.
+
+        <br><br>
+
+        But there's a small catch...
+
+        <br><br>
+
+        You have to complete a few little
+        challenges to discover all the surprises. ✨
+
+    </p>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section class="section">
+
+    <h2>Our Journey ❤️</h2>
+
+    <p class="message">
+        Together since
+        <br>
+        <strong>23 April 2025</strong>
+    </p>
+
+    <div class="counter">
+
+        <div class="counterBox">
+            <span class="counterNumber" id="days">0</span>
+            <span class="counterLabel">DAYS</span>
+        </div>
+
+        <div class="counterBox">
+            <span class="counterNumber" id="hours">0</span>
+            <span class="counterLabel">HOURS</span>
+        </div>
+
+        <div class="counterBox">
+            <span class="counterNumber" id="minutes">0</span>
+            <span class="counterLabel">MINUTES</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAME 1 ================= -->
+
+<section class="section">
+
+    <h2>Game 1 🧩</h2>
+
+    <div class="game" id="game1">
+
+        <div class="gameTitle">
+            How well do you know yourself? ❤️
+        </div>
+
+        <p class="gameText">
+            Which nickname belongs to the birthday girl?
+        </p>
+
+        <div class="quizOptions">
+
+            <button data-answer="wrong">
+                Princess
+            </button>
+
+            <button data-answer="correct">
+                Mummah
+            </button>
+
+            <button data-answer="wrong">
+                Sunshine
+            </button>
+
+        </div>
+
+        <div class="status" id="quizStatus"></div>
+
+        <div class="letter" id="letter1">
+
+            <div class="letterIcon">💌</div>
+
+            <strong>Little Letter #1</strong>
+
+            <br><br>
+
+            So that's our Mummah. ❤️
+
+            <br><br>
+
+            The first little door is open.
+            And trust me... there are still
+            more surprises waiting for you.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAME 2 ================= -->
+
+<section class="section">
+
+    <h2>Game 2 💕</h2>
+
+    <div class="game">
+
+        <div class="gameTitle">
+            Catch My Hearts
+        </div>
+
+        <p class="gameText">
+            Catch 7 hearts. Take your time —
+            they won't disappear while you're
+            trying to catch them.
+        </p>
+
+        <div>
+            Score:
+            <strong id="heartScore">0</strong> / 7
+        </div>
+
+        <div id="heartArena"></div>
+
+        <button id="heartStart">
+            Start Game ❤️
+        </button>
+
+        <div class="status" id="heartStatus"></div>
+
+        <div class="letter" id="letter2">
+
+            <div class="letterIcon">💗</div>
+
+            <strong>Little Letter #2</strong>
+
+            <br><br>
+
+            You caught them all.
+
+            <br><br>
+
+            If I could give you every heart
+            in the world, I'd still probably
+            find one more for you. ❤️
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAME 3 ================= -->
+
+<section class="section">
+
+    <h2>Game 3 🎁</h2>
+
+    <div class="game">
+
+        <div class="gameTitle">
+            Find Your Gift
+        </div>
+
+        <p class="gameText">
+            One of these three gifts is hiding
+            your next surprise.
+        </p>
+
+        <div class="boxes">
+
+            <button class="box" data-box="1">🎁</button>
+            <button class="box" data-box="2">🎁</button>
+            <button class="box" data-box="3">🎁</button>
+
+        </div>
+
+        <div class="status" id="boxStatus"></div>
+
+        <div class="letter" id="letter3">
+
+            <div class="letterIcon">🎀</div>
+
+            <strong>Little Letter #3</strong>
+
+            <br><br>
+
+            You found it! 🥰
+
+            <br><br>
+
+            Every little surprise here is
+            just a tiny reminder that you
+            deserve beautiful moments.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GAME 4 ================= -->
+
+<section class="section">
+
+    <h2>Game 4 🌹</h2>
+
+    <div class="game">
+
+        <div class="gameTitle">
+            Pick Your Rose
+        </div>
+
+        <p class="gameText">
+            Only one rose has your secret message.
+        </p>
+
+        <div class="roses">
+
+            <span class="rose" data-rose="1">🌹</span>
+            <span class="rose" data-rose="2">🌹</span>
+            <span class="rose" data-rose="3">🌹</span>
+            <span class="rose" data-rose="4">🌹</span>
+            <span class="rose" data-rose="5">🌹</span>
+
+        </div>
+
+        <div class="status" id="roseStatus"></div>
+
+        <div class="letter" id="letter4">
+
+            <div class="letterIcon">🌹</div>
+
+            <strong>Little Letter #4</strong>
+
+            <br><br>
+
+            You picked the special rose.
+
+            <br><br>
+
+            Some flowers are beautiful,
+            but this one comes with a message:
+
+            <br><br>
+
+            <em>
+                Keep that beautiful smile of yours.
+                ❤️
+            </em>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MEMORIES ================= -->
+
+<section class="section">
+
+    <h2>Our Memories 📸</h2>
+
+    <p class="memoriesIntro">
+        A few little moments worth keeping. ❤️
+        <br>
+        Tap any photo to see it bigger.
+    </p>
+
+    <div class="photoGrid">
+
+        <div class="photoCard" onclick="openPhoto('memory1.jpg')">
+            <img src="memory1.jpg" alt="Memory 1">
+            <div class="photoCaption">
+                A beautiful memory ❤️
+            </div>
+        </div>
+
+        <div class="photoCard" onclick="openPhoto('memory2.jpg')">
+            <img src="memory2.jpg" alt="Memory 2">
+            <div class="photoCaption">
+                One for the memories ✨
+            </div>
+        </div>
+
+        <div class="photoCard" onclick="openPhoto('memory3.jpg')">
+            <img src="memory3.jpg" alt="Memory 3">
+            <div class="photoCaption">
+                A moment worth remembering 💗
+            </div>
+        </div>
+
+        <div class="photoCard" onclick="openPhoto('memory4.jpg')">
+            <img src="memory4.jpg" alt="Memory 4">
+            <div class="photoCaption">
+                Another little memory 🌸
+            </div>
+        </div>
+
+        <div class="photoCard" onclick="openPhoto('memory5.jpg')">
+            <img src="memory5.jpg" alt="Memory 5">
+            <div class="photoCaption">
+                A special moment ❤️
+            </div>
+        </div>
+
+        <div class="photoCard" onclick="openPhoto('memory6.jpg')">
+            <img src="memory6.jpg" alt="Memory 6">
+            <div class="photoCaption">
+                More memories to keep ✨
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PHOTO VIEWER -->
+
+<div id="photoViewer">
+
+    <button
+        class="closePhoto"
+        onclick="closePhoto()">
+        ×
+    </button>
+
+    <img id="viewerImage" src="" alt="Memory">
+
+</div>
+
+
+<!-- ================= GAME 5 ================= -->
+
+<section class="section">
+
+    <h2>Game 5 🎯</h2>
+
+    <div class="game">
+
+        <div class="gameTitle">
+            Catch the Final Hearts
+        </div>
+
+        <p class="gameText">
+            Catch 5 hearts to unlock the final letter.
+        </p>
+
+        <div>
+            Score:
+            <strong id="targetScore">0</strong> / 5
+        </div>
+
+        <div id="targetArena"></div>
+
+        <button id="targetStart">
+            Start ❤️
+        </button>
+
+        <div class="status" id="targetStatus"></div>
+
+        <div class="letter" id="letter5">
+
+            <div class="letterIcon">💌</div>
+
+            <strong>Little Letter #5</strong>
+
+            <br><br>
+
+            You made it through every challenge.
+
+            <br><br>
+
+            And now there's only one thing left...
+
+            <br><br>
+
+            Your final surprise. ✨
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FINAL SURPRISE ================= -->
+
+<section class="section">
+
+    <h2>The Final Surprise 💖</h2>
+
+    <div id="final">
+
+        <div class="finalHeart">
+            ❤️
+        </div>
+
+        <h2>
+            Happy Birthday, Triveny! 🎂
+        </h2>
+
+        <p class="message">
+
+            You made it all the way here. 🥹
+
+            <br><br>
+
+            This little website was made especially
+            for your special day, with lots of little
+            surprises along the way.
+
+            <br><br>
+
+            And now...
+
+            <br><br>
+
+            I have one last letter for you. 💌
+
+        </p>
+
+        <br>
+
+        <button id="openLastLetter">
+            Last Letter For You 💌
+        </button>
+
+
+        <!-- ================= LAST LETTER ================= -->
+
+        <div class="letter" id="lastLetter">
+
+            <div class="letterIcon">
+                💌
+            </div>
+
+            <strong>
+                Last Letter For You 🥹🫂
+            </strong>
+
+            <br><br>
+
+            Ahhhh soo it's 23rd September aa very special day to the mostttt prettiest girl I ever met aaj ke din hi aaye thy n aap? Rootey rootey mujey hasane ke liye? I hope this year you find you peace over a person aapp bhtt achi ho like mee aapko aese words me explain nhi kar sakta aapki baatein aapko smile aapki ankhein aapki gaal aapki zulfein aapki chaal aap bhtt kamalll ho bhaii literally bhtt jyadaaaaaaaaaa bhaii literally Your smile brightens my day.You always know how to make me laugh.Your kindness inspires me.You listen to me with genuine interest.You support my dreams.You have the most beautiful eyes.You make me feel safe.Your hugs are the best.You are incredibly thoughtful.You bring out the best in me.You are my best friend.You accept me as I am.Your love for adventure.The way you care for others.Your creativity amazes me.You make even the ordinary moments special.Your sense of humor.The way you look at me.You are so patient.You never give up on us.You are my biggest cheerleader..
+
+            <br><br>
+
+            Triveny, you're really my Shehzadi 🥹
+            My little princess. 🫠
+
+            <br><br>
+
+            There's no one quite like you.
+            Out of all the people in this world,
+            I'm grateful that our paths crossed,
+            and I'll continue choosing you and
+            valuing you through every moment. ✨🫶🏻
+
+            <br><br>
+
+            You've been a constant and special person
+            in my life. 🥀 I want to be there for you
+            through both the difficult days and the
+            happy ones, supporting you and celebrating
+            every beautiful moment with you. 🫂
+
+            <br><br>
+
+            Today, as you celebrate this beautiful
+            new chapter of your life, I pray that
+            Allah fills your future with happiness,
+            peace, success, and countless blessings. ✨
+
+            <br><br>
+
+            May Allah bless us with the blessings of
+            Nikaah at the right time.
+            Ameen Ya Rabb-ul-Alameen. ✨🫶🏻
+
+            <br><br>
+
+            You matter to me more than words can
+            properly explain. I hope you always
+            remember that you deserve to feel
+            appreciated, respected, supported,
+            and surrounded by happiness. 🥹❤️
+
+            <br><br>
+
+            I'll always be wishing the very best
+            for you and cheering for you through
+            every new chapter.
+
+            <br><br>
+
+            I love you, Triveny. 🥀🫶🏻
+
+            <br><br>
+
+            Yours ~ your moin 🥹🫂
+
+        </div>
+
+
+        <br>
+
+        <button id="finalHearts">
+            One Last Surprise ❤️
+        </button>
+
+    </div>
+
+</section>
+
+
+<footer>
+    Made with ❤️ for Triveny
+</footer>
+
+</div>
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================================================= */
+/* PASSWORD */
+/* ================================================= */
+
+const passwordInput =
+    document.getElementById("password");
+
+const unlockButton =
+    document.getElementById("unlockButton");
+
+const error =
+    document.getElementById("error");
+
+const lockScreen =
+    document.getElementById("lockScreen");
+
+const website =
+    document.getElementById("website");
+
+function unlock(){
+
+    if(passwordInput.value === "TRIVENY23"){
+
+        lockScreen.style.display = "none";
+        website.style.display = "block";
+
+        createHearts(15);
+
+    }else{
+
+        error.style.display = "block";
+
+        passwordInput.value = "";
+
+        setTimeout(function(){
+
+            error.style.display = "none";
+
+        },2000);
+
+    }
+
+}
+
+unlockButton.addEventListener("click",unlock);
+
+passwordInput.addEventListener(
+    "keydown",
+    function(e){
+
+        if(e.key === "Enter"){
+            unlock();
+        }
+
+    }
+);
+
+
+/* ================================================= */
+/* BACKGROUND PARTICLES */
+/* ================================================= */
+
+function createParticle(){
+
+    const particle =
+        document.createElement("div");
+
+    particle.className = "particle";
+
+    particle.style.left =
+        Math.random() * 100 + "%";
+
+    particle.style.animationDuration =
+        (7 + Math.random() * 8) + "s";
+
+    particle.style.opacity =
+        Math.random();
+
+    document
+        .getElementById("particles")
+        .appendChild(particle);
+
+    setTimeout(function(){
+
+        particle.remove();
+
+    },13000);
+
+}
+
+setInterval(createParticle,650);
+
+
+/* ================================================= */
+/* JOURNEY COUNTER */
+/* ================================================= */
+
+const startDate =
+    new Date("2025-04-23T00:00:00");
+
+function updateCounter(){
+
+    const now = new Date();
+
+    let difference =
+        now - startDate;
+
+    if(difference < 0){
+        difference = 0;
+    }
+
+    const totalMinutes =
+        Math.floor(
+            difference / 60000
+        );
+
+    const days =
+        Math.floor(
+            totalMinutes / 1440
+        );
+
+    const hours =
+        Math.floor(
+            (totalMinutes % 1440) / 60
+        );
+
+    const minutes =
+        totalMinutes % 60;
+
+    document.getElementById("days")
+        .textContent = days;
+
+    document.getElementById("hours")
+        .textContent = hours;
+
+    document.getElementById("minutes")
+        .textContent = minutes;
+
+}
+
+updateCounter();
+
+setInterval(updateCounter,30000);
+
+
+/* ================================================= */
+/* FALLING HEARTS */
+/* ================================================= */
+
+function createHearts(amount){
+
+    const emojis = [
+        "❤️",
+        "💗",
+        "💖",
+        "💕",
+        "💞",
+        "✨"
+    ];
+
+    for(let i = 0; i < amount; i++){
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "falling";
+
+        heart.textContent =
+            emojis[
+                Math.floor(
+                    Math.random() *
+                    emojis.length
+                )
+            ];
+
+        heart.style.left =
+            Math.random() * 100 + "%";
+
+        heart.style.fontSize =
+            (18 + Math.random() * 25) + "px";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 4) + "s";
+
+        heart.style.animationDelay =
+            Math.random() * 1.5 + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(function(){
+
+            heart.remove();
+
+        },8000);
+
+    }
+
+}
+
+
+/* ================================================= */
+/* GAME 1 — NICKNAME QUIZ */
+/* ================================================= */
+
+const quizButtons =
+    document.querySelectorAll(
+        "#game1 .quizOptions button"
+    );
+
+quizButtons.forEach(function(button){
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            const status =
+                document.getElementById(
+                    "quizStatus"
+                );
+
+            if(
+                button.dataset.answer ===
+                "correct"
+            ){
+
+                status.textContent =
+                    "Correct! 🥰❤️";
+
+                document
+                    .getElementById("letter1")
+                    .style.display = "block";
+
+                document
+                    .getElementById("game1")
+                    .classList.add(
+                        "gameComplete"
+                    );
+
+                createHearts(12);
+
+                quizButtons.forEach(
+                    function(item){
+                        item.disabled = true;
+                    }
+                );
+
+            }else{
+
+                status.textContent =
+                    "Nope 😭 Try again!";
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ================================================= */
+/* GAME 2 — CATCH HEARTS */
+/* ================================================= */
+
+const heartArena =
+    document.getElementById(
+        "heartArena"
+    );
+
+const heartStart =
+    document.getElementById(
+        "heartStart"
+    );
+
+const heartScore =
+    document.getElementById(
+        "heartScore"
+    );
+
+const heartStatus =
+    document.getElementById(
+        "heartStatus"
+    );
+
+let caughtHearts = 0;
+let heartGameRunning = false;
+
+function spawnCatchHeart(){
+
+    if(!heartGameRunning){
+        return;
+    }
+
+    if(
+        heartArena.querySelector(
+            ".catchHeart"
+        )
+    ){
+        return;
+    }
+
+    const heart =
+        document.createElement("div");
+
+    heart.className =
+        "catchHeart";
+
+    heart.textContent = "❤️";
+
+    const maxX =
+        heartArena.clientWidth - 45;
+
+    const maxY =
+        heartArena.clientHeight - 45;
+
+    heart.style.left =
+        Math.max(
+            5,
+            Math.random() * maxX
+        ) + "px";
+
+    heart.style.top =
+        Math.max(
+            5,
+            Math.random() * maxY
+        ) + "px";
+
+    heart.addEventListener(
+        "click",
+        function(){
+
+            heart.remove();
+
+            caughtHearts++;
+
+            heartScore.textContent =
+                caughtHearts;
+
+            if(caughtHearts >= 7){
+
+                heartGameRunning = false;
+
+                heartStatus.textContent =
+                    "You caught them all! 💗";
+
+                document
+                    .getElementById("letter2")
+                    .style.display = "block";
+
+                createHearts(15);
+
+                heartStart.disabled = true;
+
+            }else{
+
+                spawnCatchHeart();
+
+            }
+
+        }
+    );
+
+    heartArena.appendChild(heart);
+
+}
+
+heartStart.addEventListener(
+    "click",
+    function(){
+
+        if(heartGameRunning){
+            return;
+        }
+
+        caughtHearts = 0;
+
+        heartScore.textContent = "0";
+
+        heartStatus.textContent =
+            "Catch them! ❤️";
+
+        heartGameRunning = true;
+
+        spawnCatchHeart();
+
+    }
+);
+
+
+/* ================================================= */
+/* GAME 3 — GIFT BOX */
+/* ================================================= */
+
+const boxes =
+    document.querySelectorAll(".box");
+
+boxes.forEach(function(box){
+
+    box.addEventListener(
+        "click",
+        function(){
+
+            const status =
+                document.getElementById(
+                    "boxStatus"
+                );
+
+            if(box.dataset.box === "2"){
+
+                status.textContent =
+                    "You found your gift! 🎁❤️";
+
+                document
+                    .getElementById("letter3")
+                    .style.display = "block";
+
+                box.style.background =
+                    "#ff427e";
+
+                createHearts(12);
+
+                boxes.forEach(
+                    function(item){
+                        item.disabled = true;
+                    }
+                );
+
+            }else{
+
+                status.textContent =
+                    "Not this one 😭 Try another!";
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ================================================= */
+/* GAME 4 — ROSE */
+/* ================================================= */
+
+const roses =
+    document.querySelectorAll(".rose");
+
+roses.forEach(function(rose){
+
+    rose.addEventListener(
+        "click",
+        function(){
+
+            const status =
+                document.getElementById(
+                    "roseStatus"
+                );
+
+            if(rose.dataset.rose === "3"){
+
+                status.textContent =
+                    "You found the special rose! 🌹❤️";
+
+                document
+                    .getElementById("letter4")
+                    .style.display = "block";
+
+                rose.style.transform =
+                    "scale(1.35)";
+
+                createHearts(12);
+
+                roses.forEach(
+                    function(item){
+                        item.style.pointerEvents =
+                            "none";
+                    }
+                );
+
+            }else{
+
+                status.textContent =
+                    "Beautiful... but not the secret one 😭";
+
+            }
+
+        }
+    );
+
+});
+
+
+/* ================================================= */
+/* PHOTO VIEWER */
+/* ================================================= */
+
+function openPhoto(src){
+
+    const viewer =
+        document.getElementById(
+            "photoViewer"
+        );
+
+    const image =
+        document.getElementById(
+            "viewerImage"
+        );
+
+    image.src = src;
+
+    viewer.style.display = "flex";
+
+}
+
+function closePhoto(){
+
+    document
+        .getElementById("photoViewer")
+        .style.display = "none";
+
+}
+
+document
+    .getElementById("photoViewer")
+    .addEventListener(
+        "click",
+        function(e){
+
+            if(e.target === this){
+                closePhoto();
+            }
+
+        }
+    );
+
+
+/* ================================================= */
+/* GAME 5 — FINAL HEARTS */
+/* ================================================= */
+
+const targetArena =
+    document.getElementById(
+        "targetArena"
+    );
+
+const targetStart =
+    document.getElementById(
+        "targetStart"
+    );
+
+const targetScore =
+    document.getElementById(
+        "targetScore"
+    );
+
+const targetStatus =
+    document.getElementById(
+        "targetStatus"
+    );
+
+let finalScore = 0;
+let targetRunning = false;
+
+function spawnTargetHeart(){
+
+    if(!targetRunning){
+        return;
+    }
+
+    if(
+        targetArena.querySelector(
+            ".target"
+        )
+    ){
+        return;
+    }
+
+    const target =
+        document.createElement("div");
+
+    target.className = "target";
+
+    target.textContent = "❤️";
+
+    const maxX =
+        targetArena.clientWidth - 45;
+
+    const maxY =
+        targetArena.clientHeight - 45;
+
+    target.style.left =
+        Math.max(
+            5,
+            Math.random() * maxX
+        ) + "px";
+
+    target.style.top =
+        Math.max(
+            5,
+            Math.random() * maxY
+        ) + "px";
+
+    target.addEventListener(
+        "click",
+        function(){
+
+            target.remove();
+
+            finalScore++;
+
+            targetScore.textContent =
+                finalScore;
+
+            if(finalScore >= 5){
+
+                targetRunning = false;
+
+                targetStatus.textContent =
+                    "You did it! The final surprise is yours. 💖";
+
+                document
+                    .getElementById("letter5")
+                    .style.display = "block";
+
+                document
+                    .getElementById("final")
+                    .style.display = "block";
+
+                createHearts(25);
+
+                targetStart.disabled = true;
+
+                setTimeout(function(){
+
+                    document
+                        .getElementById("final")
+                        .scrollIntoView({
+                            behavior:"smooth",
+                            block:"center"
+                        });
+
+                },300);
+
+            }else{
+
+                spawnTargetHeart();
+
+            }
+
+        }
+    );
+
+    targetArena.appendChild(target);
+
+}
+
+targetStart.addEventListener(
+    "click",
+    function(){
+
+        if(targetRunning){
+            return;
+        }
+
+        finalScore = 0;
+
+        targetScore.textContent = "0";
+
+        targetStatus.textContent =
+            "Catch them all! ❤️";
+
+        targetRunning = true;
+
+        spawnTargetHeart();
+
+    }
+);
+
+
+/* ================================================= */
+/* LAST LETTER */
+/* ================================================= */
+
+document
+    .getElementById("openLastLetter")
+    .addEventListener(
+        "click",
+        function(){
+
+            const letter =
+                document.getElementById(
+                    "lastLetter"
+                );
+
+            letter.style.display = "block";
+
+            createHearts(20);
+
+            setTimeout(function(){
+
+                letter.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            },150);
+
+            this.style.display = "none";
+
+        }
+    );
+
+
+/* ================================================= */
+/* ONE LAST SURPRISE */
+/* ================================================= */
+
+document
+    .getElementById("finalHearts")
+    .addEventListener(
+        "click",
+        function(){
+
+            createHearts(45);
+
+            this.textContent =
+                "For You, Triveny ❤️";
+
+            this.disabled = true;
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
